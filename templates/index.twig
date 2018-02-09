@@ -1,0 +1,42 @@
+
+<table id='posts'>
+	<tr>
+		<th>Title</th>
+		<th>Joke</th>
+	</tr>
+
+	{% for item in results %}
+		{% if item.data.name != "t3_7c3dev" %}
+			<tr>
+				<td>
+					<a href="{{ item.data.url }}"  target="_blank">
+						{{ item.data.title }}
+					</a>
+				</td>
+				<td>{{ item.data.selftext_html|raw }}</td>
+			</tr>
+		{% endif %}
+	{% endfor %}
+	<tr>
+		<td>{{ before }}</td>
+		<td>{{ after }}</td>
+	</tr>
+
+</table>
+<div>
+	<span> 
+	{% if before is not null %}
+		<a href="javascript:prev( '{{ before }}' )">
+			Prev.
+		</a> 
+	{% else %}
+		Prev.
+	{% endif %}
+	</span>
+	<span> 
+		<a href="javascript:next( '{{ after }}' )">Next</a> 
+	</span>
+</div>
+<input type="hidden" id="sort" value="{{ sort }}">
+<input type="hidden" id="count" value="{{ count }}">
+
