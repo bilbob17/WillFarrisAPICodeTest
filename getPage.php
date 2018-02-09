@@ -12,7 +12,7 @@
 		$options = "&count=" . $count . "&after=" . $_POST['after'];
 	}
 	elseif( isset($_POST['before']))
-	{	//deincrement count to get the correct before/after values
+	{	//decrement count to get the correct before/after values
 		$count = ($count > 10)? (int)$_POST['count'] - 10: (int)$_POST['count'];
 		$options = "&count=" . $count . "&before=" . $_POST['before'];
 	}
@@ -20,7 +20,7 @@
 	//executes a new search
 	$search = new Searcher();
 	if( isset($_POST['search']))
-	{	//deincrement count to get the correct before/after values
+	{	//decrement count to get the correct before/after values
 		$results=$search->execSearch( $options, $_POST['sort'], $_POST['search'] );
 	}
 	else
