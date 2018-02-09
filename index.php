@@ -1,6 +1,5 @@
 <html>
-<head>
-   
+<head>   
  <title>10 Reddit Jokes</title>
 </head>
 <body>
@@ -17,15 +16,16 @@
 	require __DIR__.'/vendor/autoload.php';
 	include 'searcher.php';
 
-	//Executes a new search
+	//execute a new search
 	$search = new Searcher();
 	$results=$search->execSearch(); 
 
-	//Loads the results in Twig
+	//load the results in twig
 	$loader = new Twig_Loader_Filesystem(__DIR__.'/templates');
 	$twig = new Twig_Environment($loader, array());
 
-	//Renders our view
+	//renders the view
+	//results div allows new results be reloaded without reloading page
 	echo "<div id='results'>";
 	echo $twig->render('index.twig', array(
 		'results' => $results["data"]["children"],
