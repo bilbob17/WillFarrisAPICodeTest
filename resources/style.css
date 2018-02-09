@@ -10,3 +10,7 @@
     background-color: #334CFF;
     color: white;
 }
+
+.selectedSort {
+	background-color: DCDCDC;
+}

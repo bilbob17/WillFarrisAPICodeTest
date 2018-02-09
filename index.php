@@ -8,8 +8,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <div>
 	<span><h1>Jokes From R/Jokes</h1></span>
-	<span><a href="javascript:newSort('hot')">Hot</a></span>
-	<span><a href="javascript:newSort('new')">New</a></span>
+	<span id="hot" class="selectedSort"><a href="javascript:newSort('hot')">Hot</a></span>
+	<span id="new"><a href="javascript:newSort('new')">New</a></span>
 	<input type="text" id="search"><button onclick="search()">Search</button>
 </div>
 <?php
